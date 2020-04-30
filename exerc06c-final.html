@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Exercice 6 c) Vrai ou faux ou peut-être</title>
+<style>
+/* ----- grille de mise en page ----- */
+#conteneur{width:255px; margin:auto; padding:20px;}
+
+div, header, section, footer {border:1px dotted #ccc;}
+header, footer, form, #miseEnScene {text-align:center;}
+
+/* -----  format du texte ----- */
+p, h1, form {padding:10px; margin:5px; font-size:15px; line-height:17px;}
+</style>
+</head>
+<body>
+<div id="conteneur">
+	<header>
+		<h1 id="nomDeLaquestion">Question 3</h1>
+	</header>
+	<section id="questionnaire">
+		<form>
+			<p>Vrai ou faux : Une valeur booléenne a deux valeurs possibles.</p>
+			<select name="choix" id="choix" >
+				<option value="default" default> - - - </option>
+				<option value="0">Faux</option>
+				<option value="1">Vrai</option>
+				<option value="2">Peut-être</option>
+			</select>
+			<input type="button" value="Cliquez pour valider votre choix" onclick="repondre();" />
+		</form>
+	</section>
+	<section id="resultat">
+		<div id="retroaction"></div>
+	</section>
+	<footer>
+			<p>&copy; Cégep de l'Outaouais, TIM 2020</p>
+	</footer>
+</div>
+</body>
+<script type="text/javascript">
+<!--
+// 1) déclarer plusieurs variables globales en même temps
+var message, reponse;
+
+function repondre(){
+
+	reponse = document.getElementById("choix").value; 
+	
+	if(reponse=="default"){
+		alert("D'avord, fait un choix");
+	}else{
+		reponse = Number(reponse); 
+		alert(typeof(reponse));
+
+		if(reponse > 1){ 
+			message= "C'est peut-être la bonne réponse";
+			alert("yes");
+		} else{ 
+		
+			if(reponse){ 
+				message="Vrai. C'est une bonne réponse.";
+			}else{
+				message= "Faux. Ce n'est pas la bonne réponse.";
+			}
+		}
+		afficherLeResultat();
+	}
+	
+	
+	
+} // fin de la fonction repondre()
+
+function afficherLeResultat(){
+	document.getElementById("retroaction").innerHTML = message; 
+}
+
+//-->
+</script>
+</html>

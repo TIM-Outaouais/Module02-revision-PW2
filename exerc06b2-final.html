@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Exercice 6 a) corrigé</title>
+<style>
+/* ----- grille de mise en page ----- */
+#conteneur{width:255px; margin:auto; padding:20px;}
+
+div, header, section, footer {border:1px dotted #ccc;}
+header, footer, form, #miseEnScene {text-align:center;}
+
+/* -----  format du texte ----- */
+p, h1, form {padding:10px; margin:5px; font-size:15px; line-height:17px;}
+</style>
+</head>
+<body>
+<div id="conteneur">
+	<header>
+		<h1 id="nomDeLaquestion">Question 2</h1>
+	</header>
+	<section id="questionnaire">
+		<form>
+			<p>Choisir un nombre entre 5 et 10, excluant 5 et 10.</p>
+			<input type="text" name="choix" id="choix" >
+		
+			<input type="button" value="Cliquez pour valider votre choix" onclick="repondre();" />
+		</form>
+	</section>
+	<section id="resultat">
+		<div id="retroaction"></div>
+	</section>
+	<footer>
+			<p>&copy; Cégep de l'Outaouais, TIM 2020</p>
+	</footer>
+</div>
+</body>
+<script type="text/javascript">
+<!--
+// 1) déclarer plusieurs variables globales en même temps
+var texte, reponse;
+
+function repondre(){
+	
+	// 2) récupérer les données du formulaire
+	reponse = document.getElementById("choix").value; 
+	
+	// message dans la console pour vérifier ce qui a été sélectionné
+	console.log("la réponse soumise est de type :"+typeof(reponse)); 
+	
+	// 3) convertir la valeur texte afin qu'elle puisse être comparée dans une opération logique
+	reponse = Number(reponse);
+	
+		if(reponse<10 && reponse>5){ 
+			// 4) message pour la bonne réponse
+			texte="C'est une bonne réponse.";
+		}else{
+			// 5) message pour la mauvaise réponse
+			texte= "Ce n'est pas une bonne réponse.";
+		}
+		// 6) Peu importe la réponse, la fonction est appelée. Donc, je n'ai pas a répéter deux fois l'instruction dans le if et dans le else.
+		afficherLeResultat();
+
+	
+	
+} // fin de la fonction repondre()
+
+function afficherLeResultat(){
+	//7) afficher une rétroaction
+	document.getElementById("retroaction").innerHTML = texte; 
+	// texte est une variable globale déclarée au début du script
+}
+
+//-->
+</script>
+</html>

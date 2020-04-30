@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Exercice 6 a) corrigé</title>
+<style>
+/* ----- grille de mise en page ----- */
+#conteneur{width:255px; margin:auto; padding:20px;}
+
+div, header, section, footer {border:1px dotted #ccc;}
+header, footer, form, #miseEnScene {text-align:center;}
+
+/* -----  format du texte ----- */
+p, h1, form {padding:10px; margin:5px; font-size:15px; line-height:17px;}
+</style>
+</head>
+<body>
+<div id="conteneur">
+	<header>
+		<h1 id="Scene">Titre du site</h1>
+	</header>
+	<section id="scenario">
+		<article class="Agitôt">
+			<h1 id="titreArt1"> Agitôt</h1>
+			<p id="parArt1">texte</p>
+		</article>
+		<article class="Tournevis">
+			<h1 id="titreArt2"> Tournevis</h1>
+			<p id="parArt2">texte</p>
+		</article>
+	</section>
+	<section id="choixEvenements">
+		<form>
+			Choisir le numéro de scène
+
+			<select name="choix0" id="choix0" >
+				<option value="1">Scène 1</option>
+				<option value="2">Scène 2</option>
+			</select>
+
+			<input type="button"  value="Cliquez pour appliquer le choix" onclick="choixScene();" />
+			
+		</form>
+	</section>
+	<footer>
+			<p>&copy; Cégep de l'Outaouais, TIM 2020</p>
+	</footer>
+</div>
+</body>
+<script type="text/javascript">
+<!--
+// déclarer plusieurs variables globales en même temps
+var titrePage, titreArticle, dialogue01, dialogue02;
+
+document.getElementById("Scene").innerHTML = "Scène 1"; 
+	
+function choixScene(){
+	// déclarer et affecter une valeur au même moment
+	var choix = document.getElementById("choix0").value;
+
+	if(choix==1){ 
+		titrePage="Scène 1";
+		titreArticle1="Agitôt";
+		titreArticle2="Tournevis";  
+		dialogue01="\"Bonjour, je m\'appelle Agitôt\""; 
+		dialogue02="\"Ha Ha.. gitôt, moi c'est Tournevis. Je suis ton ennenie, je te le jure\""; 
+	}
+	
+	if(choix==2){
+		titrePage= "Scène 2";
+		titreArticle1="Tournevis"; 
+		titreArticle2="Agitôt"; 
+		dialogue01=" \"Bonjour, je m\'appelle Tournevis. Tu trembleras devant ma menace.\""; 
+		dialogue02="\"Salut Tounevis, moi c'est Agitôt. Je suis ton héros. Celui qui te dévissera. Je n'ai pas peur de tes grimaces.\""; 
+	}
+	// Appel de fonction. Une fonction peut être appeler par un événement ou simplement sur une ligne d'instruction.
+	afficher();
+
+} // fin du script
+function afficher(){
+	document.getElementById("Scene").innerHTML = titrePage;
+
+	document.getElementById("titreArt1").innerHTML = titreArticle1;
+	document.getElementById("parArt1").innerHTML = dialogue01
+		
+	document.getElementById("titreArt2").innerHTML = titreArticle2;
+	document.getElementById("parArt2").innerHTML = dialogue02
+}
+
+//-->
+</script>
+</html>
