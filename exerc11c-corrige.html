@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>Exercice 11 c ) corrigé</title>
+</head>
+<body>
+<form>
+<p>Vrai ou faux - La programmation c'est facile</p>
+<select id="reponse" />
+	<option value="defaut" selected>--choisir--</option>
+	<option value="1">vrai</option>
+	<option value="0">faux</option>
+</select>
+</form>
+<section id="resultat"><p>Résultat</p></section>
+<!-- verifier () -->
+<p><a href="#" onclick="verifier();">Vérifier ma réponse</a></p>
+</body>
+<script type="text/javascript">
+<!--
+var Reponse;
+var message;
+
+function verifier(){
+	document.getElementById("resultat").style.classeName = "red"
+	// changer Reponse
+	Reponse = document.getElementById("reponse").value;
+
+		// changer Reponse
+		// changer opérateur ==
+	if(Reponse=="defaut"){
+		// changer message
+		message="Choisir un item";
+	}else{
+			// changer Reponse
+		Reponse=Number(Reponse);
+			// changer Reponse
+		if(Reponse){
+			message ="Bonne réponse";
+		}else{
+			message = "Pas la bonne réponse";
+		}
+	}
+
+	// changer  afficherLeResultat()
+	afficherLeResultat();
+}
+function afficherLeResultat(){
+	document.getElementById("resultat").innerHTML = message;
+	//changer backgroundColor, = , "#ff00cc"
+	document.getElementById("resultat").style.backgroundColor = "d#ff00cc";
+}
+//-->
+</script>
+</html>
