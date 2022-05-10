@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>Exercice 11a- corrigé</title>
+</head>
+<body>
+<form>
+<p>Qu'elle est ta langue maternelle ?</p>
+<select id="reponse" />
+  <option value="defaut" selected>--choisir--</option>
+  <option value="fra">Francais</option>
+  <option value="0">English</option>
+</select>
+</form>
+<section id="resultat"><p>Résultat</p></section>
+<p><a href="#" onclick="verifier();">Vérifier ma réponse</a></p>
+</body>
+<script type="text/javascript">
+<!--
+
+
+function verifier(){
+  var Reponse;
+  Reponse = document.getElementById("reponse").value;
+
+  if(Reponse=="defaut"){
+    message="Choisir un item";
+  }else{
+    if(Reponse=="fra"){
+      message ="Salut !";
+    }else{
+      message = "Hello !";
+    }
+  }
+  document.getElementById("resultat").innerHTML = message;
+}
+
+//-->
+</script>
+</html>
