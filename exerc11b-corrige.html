@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>Exercice 11b - corrigé</title>
+</head>
+<body>
+<form>
+<p>Qu'elle est la capitale du Burkina Faso ?</p>
+<input type="text" id="capitale" name="capitale" />
+</form>
+<p><a href="#" onclick="VerifierMaReponse();">Vérifier ma réponse</a></p>
+</body>
+<script type="text/javascript">
+<!--
+var reponse, retroaction;
+
+function VerifierMaReponse(){
+reponse = document.getElementById("capitale").value;
+
+    if(reponse=="Ouagadougou"){
+      retroaction =  reponse + ". Bravo ! Tu as notre respect.";
+    }else{
+      retroaction = "Tu as répondu : "+reponse+" Ce n'est pas la bonne réponse. Tu ne connais pas la capitale du pays des Hommes intègres ! ";
+    }
+    alert(retroaction);
+}
+
+//-->
+</script>
+</html>
